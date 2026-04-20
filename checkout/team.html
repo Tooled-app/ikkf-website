@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team License — IKKF</title>
+    <link rel="stylesheet" href="../css/checkout.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+    <div class="checkout-page">
+        <div class="checkout-container">
+            <div class="checkout-header">
+                <a href="../index.html" class="checkout-brand">
+                    <span class="brand-tool">TOOL</span><span class="brand-ed">+ED</span>
+                </a>
+            </div>
+
+            <div class="checkout-layout">
+                <div class="checkout-form">
+                    <div class="plan-summary">
+                        <div class="popular-badge">Popular</div>
+                        <h1>Team License</h1>
+                        <div class="plan-price">
+                            <span class="price-currency">$</span>
+                            <span class="price-amount">99</span>
+                            <span class="price-period">one-time</span>
+                        </div>
+                        <p class="plan-desc">Up to 5 team members. Shared templates. Synced memory.</p>
+                    </div>
+
+                    <form id="payment-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Team Name</label>
+                                <input type="text" id="name" name="name" required placeholder="Acme Inc">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required placeholder="admin@acme.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Card Information</label>
+                            <div id="card-element" class="card-element"></div>
+                            <div id="card-errors" class="card-errors" role="alert"></div>
+                        </div>
+
+                        <button type="submit" class="btn btn-large btn-primary" id="submit-button">
+                            <span class="button-text">Pay $99</span>
+                            <span class="button-loader" hidden>Processing...</span>
+                        </button>
+                    </form>
+
+                    <div class="checkout-footer">
+                        <p>Secure payment powered by Stripe</p>
+                        <div class="secure-icons">
+                            <span>🔒 SSL Encrypted</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="checkout-sidebar">
+                    <h2>What's Included</h2>
+                    <ul class="feature-list">
+                        <li>✓ Everything in Solo</li>
+                        <li>✓ Up to 5 team members</li>
+                        <li>✓ Shared task templates</li>
+                        <li>✓ Team memory sync</li>
+                        <li>✓ Priority support</li>
+                        <li>✓ License management portal</li>
+                    </ul>
+
+                    <div class="savings-badge">
+                        <strong>Save $46</strong>
+                        <p>vs 5 Solo licenses</p>
+                    </div>
+
+                    <div class="guarantee">
+                        <div class="guarantee-icon">🛡️</div>
+                        <div class="guarantee-text">
+                            <strong>30-Day Guarantee</strong>
+                            <p>Not satisfied? Full refund, no questions asked.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="success-modal" class="modal" hidden>
+        <div class="modal-content">
+            <div class="success-icon">🎉</div>
+            <h2>Welcome to the Dojo</h2>
+            <p>Your team license keys have been sent to your email.</p>
+            <p class="license-instruction">Share these keys with your team members:</p>
+            <div class="license-key-box">
+                <code id="license-key">IKKF-TEAM-XXXX-XXXX</code>
+                <button class="copy-btn" id="copy-btn">Copy</button>
+            </div>
+            <p class="license-instruction">Each member activates with:</p>
+            <div class="terminal-example">
+                <code>ikkf activate IKKF-TEAM-XXXX-XXXX</code>
+            </div>
+            <a href="../index.html" class="btn btn-primary">Back to Home</a>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Stripe with test key (replace with your publishable key)
+        const stripe = Stripe('pk_test_your_publishable_key_here');
+        const elements = stripe.elements();
+
+        // Create card element
+        const cardElement = elements.create('card', {
+            style: {
+                base: {
+                    fontSize: '16px',
+                    fontFamily: 'Inter, sans-serif',
+                    color: '#1a1a1a',
+                    '::placeholder': {
+                        color: '#6b6b6b'
+                    }
+                },
+                invalid: {
+                    color: '#d94a3a'
+                }
+            }
+        });
+        cardElement.mount('#card-element');
+
+        // Handle form submission
+        const form = document.getElementById('payment-form');
+        const submitButton = document.getElementById('submit-button');
+        const cardErrors = document.getElementById('card-errors');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            // Disable submit button
+            submitButton.disabled = true;
+            document.querySelector('.button-text').hidden = true;
+            document.querySelector('.button-loader').hidden = false;
+
+            // Simulate payment processing
+            setTimeout(() => {
+                const licenseKey = generateLicenseKey();
+                document.getElementById('license-key').textContent = licenseKey;
+                document.getElementById('success-modal').hidden = false;
+                
+                submitButton.disabled = false;
+                document.querySelector('.button-text').hidden = false;
+                document.querySelector('.button-loader').hidden = true;
+            }, 1500);
+        });
+
+        // Handle card errors
+        cardElement.on('change', (event) => {
+            if (event.error) {
+                cardErrors.textContent = event.error.message;
+            } else {
+                cardErrors.textContent = '';
+            }
+        });
+
+        // Generate license key
+        function generateLicenseKey() {
+            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+            const parts = [];
+            for (let i = 0; i < 4; i++) {
+                let part = '';
+                for (let j = 0; j < 4; j++) {
+                    part += chars[Math.floor(Math.random() * chars.length)];
+                }
+                parts.push(part);
+            }
+            return 'IKKF-TEAM-' + parts.slice(1).join('-');
+        }
+
+        // Copy license key
+        document.getElementById('copy-btn').addEventListener('click', () => {
+            const key = document.getElementById('license-key').textContent;
+            navigator.clipboard.writeText(key);
+            document.getElementById('copy-btn').textContent = 'Copied!';
+            setTimeout(() => {
+                document.getElementById('copy-btn').textContent = 'Copy';
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

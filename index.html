@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IKKF — The Way of Building</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-brand">
+            <span class="brand-tool">TOOL</span><span class="brand-ed">+ED</span>
+        </div>
+        <div class="nav-links">
+            <a href="#features">Features</a>
+            <a href="#phases">7 Phases</a>
+            <a href="#pricing">Pricing</a>
+            <a href="/manual" class="nav-manual">Manual</a>
+        </div>
+        <a href="#pricing" class="btn btn-primary">Get IKKF</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">The Way of Building</div>
+            <h1 class="hero-title">
+                <span class="title-tool">IKKF</span>
+            </h1>
+            <p class="hero-subtitle">A martial arts-inspired framework for agent task execution. Seven phases. Zero shortcuts. Mastery through repetition.</p>
+            <div class="hero-cta">
+                <a href="#pricing" class="btn btn-large btn-primary">Start Your Journey</a>
+                <a href="#terminal" class="btn btn-large btn-secondary">See It In Action</a>
+            </div>
+            <div class="hero-version">Current: v1.0.4</div>
+        </div>
+        <div class="hero-seal">道</div>
+    </section>
+
+    <!-- Terminal Demo -->
+    <section id="terminal" class="terminal-section">
+        <div class="section-header">
+            <h2>The Dojo</h2>
+            <p>Watch IKKF guide an agent through a complete task</p>
+        </div>
+        <div class="terminal">
+            <div class="terminal-header">
+                <div class="terminal-dots">
+                    <span></span><span></span><span></span>
+                </div>
+                <span class="terminal-title">ikkf session</span>
+            </div>
+            <div class="terminal-body">
+                <div class="terminal-line">
+                    <span class="prompt">$</span>
+                    <span class="command">ikkf start "Build authentication system"</span>
+                </div>
+                <div class="terminal-output">
+                    <div class="phase-line">
+                        <span class="phase-num">1</span>
+                        <span class="phase-name">ACKNOWLEDGE</span>
+                        <span class="phase-status">✓</span>
+                    </div>
+                    <div class="phase-desc">Task understood: Build authentication system with JWT tokens</div>
+                    
+                    <div class="phase-line">
+                        <span class="phase-num">2</span>
+                        <span class="phase-name">DOMAIN DETECTION</span>
+                        <span class="phase-status">✓</span>
+                    </div>
+                    <div class="phase-desc">Domain: Backend/API | Expertise: JWT, bcrypt, session management</div>
+                    
+                    <div class="phase-line">
+                        <span class="phase-num">3</span>
+                        <span class="phase-name">CHECK EXISTING</span>
+                        <span class="phase-status">✓</span>
+                    </div>
+                    <div class="phase-desc">Found: auth.middleware.js, user.model.js</div>
+                    
+                    <div class="phase-line active">
+                        <span class="phase-num">4</span>
+                        <span class="phase-name">RESEARCH</span>
+                        <span class="phase-status">→</span>
+                    </div>
+                    <div class="phase-desc">Gathering JWT best practices...</div>
+                </div>
+                <div class="terminal-line">
+                    <span class="prompt">$</span>
+                    <span class="cursor">_</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="section-header">
+            <h2>The Belts</h2>
+            <p>Progressive discipline through structured practice</p>
+        </div>
+        <div class="feature-grid">
+            <div class="feature-card white">
+                <div class="belt-stripe"></div>
+                <h3>White Belt</h3>
+                <p><strong>Acknowledge</strong> — State the task. Confirm understanding. No ambiguity.</p>
+            </div>
+            <div class="feature-card yellow">
+                <div class="belt-stripe"></div>
+                <h3>Yellow Belt</h3>
+                <p><strong>Domain Detection</strong> — Identify the domain. Map required expertise. Know your terrain.</p>
+            </div>
+            <div class="feature-card orange">
+                <div class="belt-stripe"></div>
+                <h3>Orange Belt</h3>
+                <p><strong>Check Existing</strong> — Search memory. Find patterns. Don't reinvent.</p>
+            </div>
+            <div class="feature-card green">
+                <div class="belt-stripe"></div>
+                <h3>Green Belt</h3>
+                <p><strong>Research</strong> — Deep dive. Best practices. Trade-offs.</p>
+            </div>
+            <div class="feature-card blue">
+                <div class="belt-stripe"></div>
+                <h3>Blue Belt</h3>
+                <p><strong>Decomposition</strong> — Break into chunks. 10-15 minutes each. Clear deliverables.</p>
+            </div>
+            <div class="feature-card brown">
+                <div class="belt-stripe"></div>
+                <h3>Brown Belt</h3>
+                <p><strong>Synthesize</strong> — Plan the implementation. Architecture from research.</p>
+            </div>
+            <div class="feature-card black">
+                <div class="belt-stripe"></div>
+                <h3>Black Belt</h3>
+                <p><strong>Execute</strong> — Build chunk by chunk. Test. Commit. Persist.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7 Phases Timeline -->
+    <section id="phases" class="phases">
+        <div class="section-header light">
+            <h2>The 7 Phases</h2>
+            <p>Each task follows the same path to mastery</p>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-number">1</div>
+                <div class="timeline-content">
+                    <h3>Acknowledge</h3>
+                    <p>Confirm task understanding. State it back. Remove all ambiguity.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-number">2</div>
+                <div class="timeline-content">
+                    <h3>Domain Detection</h3>
+                    <p>Identify the domain. Map required expertise. Load relevant skills.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-number">3</div>
+                <div class="timeline-content">
+                    <h3>Check Existing</h3>
+                    <p>Search memory. Find prior art. Discover patterns. Check for existing solutions.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-number">4</div>
+                <div class="timeline-content">
+                    <h3>Research</h3>
+                    <p>Deep dive into best practices. 2026 standards. Trade-offs. Alternatives.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-number">5</div>
+                <div class="timeline-content">
+                    <h3>Decomposition</h3>
+                    <p>Break into 10-15 minute chunks. Each with clear deliverables. Dependencies mapped.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-number">6</div>
+                <div class="timeline-content">
+                    <h3>Synthesize</h3>
+                    <p>Plan implementation from research. Architecture decisions. Build order.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-number">7</div>
+                <div class="timeline-content">
+                    <h3>Execute & Persist</h3>
+                    <p>Build each chunk. Test. Commit. Record to memory. Deliver.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="section-header">
+            <h2>Choose Your Path</h2>
+            <p>One-time purchase. No subscriptions. Yours forever.</p>
+        </div>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <h3>Solo</h3>
+                    <div class="pricing-price">
+                        <span class="price-currency">$</span>
+                        <span class="price-amount">29</span>
+                    </div>
+                    <p class="pricing-note">One-time purchase</p>
+                </div>
+                <ul class="pricing-features">
+                    <li>✓ Full IKKF framework</li>
+                    <li>✓ All 7 phases</li>
+                    <li>✓ Task persistence</li>
+                    <li>✓ Memory integration</li>
+                    <li>✓ CLI commands</li>
+                    <li>✓ Lifetime updates</li>
+                </ul>
+                <a href="checkout/solo.html" class="btn btn-pricing">Get Solo</a>
+            </div>
+            <div class="pricing-card featured">
+                <div class="pricing-badge">Popular</div>
+                <div class="pricing-header">
+                    <h3>Team</h3>
+                    <div class="pricing-price">
+                        <span class="price-currency">$</span>
+                        <span class="price-amount">99</span>
+                    </div>
+                    <p class="pricing-note">Up to 5 seats</p>
+                </div>
+                <ul class="pricing-features">
+                    <li>✓ Everything in Solo</li>
+                    <li>✓ Up to 5 team members</li>
+                    <li>✓ Shared task templates</li>
+                    <li>✓ Team memory sync</li>
+                    <li>✓ Priority support</li>
+                    <li>✓ License management</li>
+                </ul>
+                <a href="checkout/team.html" class="btn btn-pricing btn-featured">Get Team</a>
+            </div>
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <h3>Enterprise</h3>
+                    <div class="pricing-price">
+                        <span class="price-custom">Custom</span>
+                    </div>
+                    <p class="pricing-note">Unlimited seats</p>
+                </div>
+                <ul class="pricing-features">
+                    <li>✓ Everything in Team</li>
+                    <li>✓ Unlimited seats</li>
+                    <li>✓ Custom integrations</li>
+                    <li>✓ SLA & dedicated support</li>
+                    <li>✓ On-premise deployment</li>
+                    <li>✓ Training & onboarding</li>
+                </ul>
+                <a href="mailto:hello@ikkf.info" class="btn btn-pricing">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="brand-tool">TOOL</span><span class="brand-ed">+ED</span>
+                <p>The Way of Building</p>
+            </div>
+            <div class="footer-links">
+                <a href="/manual">Manual</a>
+                <a href="https://github.com/colin/ikkf">GitHub</a>
+                <a href="mailto:hello@ikkf.info">Contact</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 TOOL+ED. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
