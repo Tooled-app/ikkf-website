@@ -85,15 +85,22 @@ class TerminalAnimator {
     async start() {
         if (this.isAnimating) return;
         this.isAnimating = true;
-        this.currentStep = 0;
-        this.container.innerHTML = '';
         
-        for (const step of terminalSteps) {
-            await this.renderStep(step);
-            await this.sleep(step.delay);
+        while (this.isAnimating) {
+            this.currentStep = 0;
+            this.container.innerHTML = '';
+            
+            for (const step of terminalSteps) {
+                if (!this.isAnimating) break;
+                await this.renderStep(step);
+                await this.sleep(step.delay);
+            }
+            
+            // Wait 2 seconds before repeating
+            if (this.isAnimating) {
+                await this.sleep(2000);
+            }
         }
-        
-        this.isAnimating = false;
     }
 
     async renderStep(step) {
