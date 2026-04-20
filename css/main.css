@@ -235,6 +235,27 @@ body {
 }
 
 .hero-subtitle {
+    font-size: 1.5rem;
+    color: var(--gold);
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-sm);
+}
+
+.hero-acronym {
+    font-size: 1rem;
+    color: rgba(245, 240, 232, 0.6);
+    font-family: var(--font-mono);
+    margin-bottom: var(--space-md);
+    letter-spacing: 0.05em;
+}
+
+.hero-acronym span {
+    color: var(--vermillion);
+    font-weight: 600;
+}
+
+.hero-tagline {
     font-size: 1.125rem;
     color: rgba(245, 240, 232, 0.7);
     max-width: 540px;
