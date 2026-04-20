@@ -53,45 +53,12 @@
                 </div>
                 <span class="terminal-title">ikkf session</span>
             </div>
-            <div class="terminal-body">
-                <div class="terminal-line">
-                    <span class="prompt">$</span>
-                    <span class="command">ikkf start "Build authentication system"</span>
-                </div>
-                <div class="terminal-output">
-                    <div class="phase-line">
-                        <span class="phase-num">1</span>
-                        <span class="phase-name">ACKNOWLEDGE</span>
-                        <span class="phase-status">✓</span>
-                    </div>
-                    <div class="phase-desc">Task understood: Build authentication system with JWT tokens</div>
-                    
-                    <div class="phase-line">
-                        <span class="phase-num">2</span>
-                        <span class="phase-name">DOMAIN DETECTION</span>
-                        <span class="phase-status">✓</span>
-                    </div>
-                    <div class="phase-desc">Domain: Backend/API | Expertise: JWT, bcrypt, session management</div>
-                    
-                    <div class="phase-line">
-                        <span class="phase-num">3</span>
-                        <span class="phase-name">CHECK EXISTING</span>
-                        <span class="phase-status">✓</span>
-                    </div>
-                    <div class="phase-desc">Found: auth.middleware.js, user.model.js</div>
-                    
-                    <div class="phase-line active">
-                        <span class="phase-num">4</span>
-                        <span class="phase-name">RESEARCH</span>
-                        <span class="phase-status">→</span>
-                    </div>
-                    <div class="phase-desc">Gathering JWT best practices...</div>
-                </div>
-                <div class="terminal-line">
-                    <span class="prompt">$</span>
-                    <span class="cursor">_</span>
-                </div>
+            <div class="terminal-body" id="terminal-body">
+                <!-- Content will be animated by JS -->
             </div>
+        </div>
+        <div class="terminal-controls">
+            <button id="replay-btn" class="btn btn-secondary">↻ Replay</button>
         </div>
     </section>
 

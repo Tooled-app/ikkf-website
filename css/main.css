@@ -373,6 +373,7 @@ body {
     font-family: var(--font-mono);
     font-size: 0.875rem;
     line-height: 1.8;
+    min-height: 400px;
 }
 
 .terminal-line {
@@ -383,10 +384,20 @@ body {
 
 .prompt {
     color: var(--vermillion);
+    flex-shrink: 0;
 }
 
 .command {
     color: #fff;
+}
+
+.command.typing {
+    animation: typing 0.05s steps(1, end);
+}
+
+@keyframes typing {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 .cursor {
@@ -399,7 +410,8 @@ body {
     51%, 100% { opacity: 0; }
 }
 
-.terminal-output {
+/* Terminal output items */
+.terminal-output-item {
     margin: var(--space-md) 0;
     padding-left: var(--space-md);
 }
@@ -422,6 +434,7 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: 3px;
+    flex-shrink: 0;
 }
 
 .phase-name {
@@ -434,14 +447,40 @@ body {
     margin-left: auto;
 }
 
-.phase-line.active .phase-status {
-    color: var(--vermillion);
-}
-
 .phase-desc {
     color: var(--gray);
     margin-bottom: var(--space-md);
     padding-left: 28px;
+}
+
+/* Terminal summary */
+.terminal-summary {
+    margin: var(--space-lg) 0;
+    padding: var(--space-md);
+    background: rgba(39, 201, 63, 0.1);
+    border: 1px solid rgba(39, 201, 63, 0.3);
+    border-radius: 8px;
+}
+
+.summary-line {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.summary-icon {
+    font-size: 1.25rem;
+}
+
+.summary-text {
+    color: #27c93f;
+    font-weight: 500;
+}
+
+/* Terminal controls */
+.terminal-controls {
+    text-align: center;
+    margin-top: var(--space-lg);
 }
 
 /* Features Section */
