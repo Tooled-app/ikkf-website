@@ -2,7 +2,7 @@
 /* IKKF Website Styles */
 
 :root {
-    /* Colors - Japanese martial arts aesthetic */
+    /* Colors */
     --vermillion: #d94a3a;
     --ink-black: #1a1a1a;
     --gold: #c9a436;
@@ -11,16 +11,7 @@
     --gray: #6b6b6b;
     --light-gray: #e5e5e5;
     
-    /* Belt colors */
-    --belt-white: #f5f5f5;
-    --belt-yellow: #f5d547;
-    --belt-orange: #e89a3a;
-    --belt-green: #5c9c5c;
-    --belt-blue: #3a6ab5;
-    --belt-brown: #8b5a3c;
-    --belt-black: #1a1a1a;
-    
-    /* Typography - Far Eastern vibe */
+    /* Typography */
     --font-serif: 'Noto Serif JP', 'Shippori Mincho', 'Noto Serif SC', serif;
     --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-mono: 'JetBrains Mono', 'SF Mono', monospace;
@@ -50,7 +41,7 @@ html {
 
 body {
     font-family: var(--font-serif);
-    background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
+    background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 50%, #2a2a2a 100%);
     color: var(--cream);
     min-height: 100vh;
     line-height: 1.6;
@@ -96,8 +87,14 @@ body {
     transition: color var(--transition);
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a.active {
     color: var(--cream);
+}
+
+.nav-active {
+    color: var(--cream) !important;
+    font-weight: 600;
 }
 
 .nav-manual {
@@ -259,6 +256,17 @@ body {
 .acronym-small {
     color: rgba(245, 240, 232, 0.8);
     font-weight: 400;
+}
+
+.acronym-know {
+    color: rgba(245, 240, 232, 0.8);
+    font-weight: 400;
+}
+
+.know-k {
+    color: var(--vermillion);
+    font-weight: 700;
+    font-size: 1.75rem;
 }
 
 .hero-matrix-ref {
@@ -777,93 +785,6 @@ body {
     border-color: var(--vermillion);
 }
 
-/* Activation Section */
-.activation {
-    padding: var(--space-3xl) var(--space-xl);
-    background: linear-gradient(180deg, #0d0d0d 0%, #1a1a1a 100%);
-}
-
-.activation-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-lg);
-    max-width: 1000px;
-    margin: 0 auto var(--space-2xl);
-}
-
-.activation-card {
-    background: rgba(26, 26, 26, 0.6);
-    border: 1px solid #333;
-    border-radius: 12px;
-    padding: var(--space-xl);
-    text-align: center;
-    transition: transform var(--transition), border-color var(--transition);
-}
-
-.activation-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--vermillion);
-}
-
-.activation-number {
-    width: 48px;
-    height: 48px;
-    background: var(--vermillion);
-    color: var(--white);
-    font-size: 1.25rem;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    margin: 0 auto var(--space-md);
-}
-
-.activation-card h3 {
-    font-size: 1.125rem;
-    font-weight: 600;
-    color: var(--cream);
-    margin-bottom: var(--space-sm);
-    font-family: var(--font-serif);
-}
-
-.activation-card p {
-    color: rgba(245, 240, 232, 0.7);
-    font-size: 0.9375rem;
-    line-height: 1.6;
-}
-
-.activation-code {
-    display: block;
-    margin-top: var(--space-md);
-    padding: var(--space-sm);
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 6px;
-    font-family: var(--font-mono);
-    font-size: 0.875rem;
-    color: var(--gold);
-}
-
-.activation-features {
-    display: flex;
-    justify-content: center;
-    gap: var(--space-xl);
-    flex-wrap: wrap;
-    margin-top: var(--space-xl);
-}
-
-.feature-item {
-    display: flex;
-    align-items: center;
-    gap: var(--space-sm);
-    color: rgba(245, 240, 232, 0.8);
-    font-size: 0.9375rem;
-}
-
-.feature-icon {
-    font-size: 1.25rem;
-}
-
 /* Footer */
 .footer {
     background: var(--ink-black);
@@ -936,14 +857,8 @@ body {
         align-items: center;
     }
     
-    .hero-seal {
-        font-size: 10rem;
-        opacity: 0.03;
-    }
-    
     .feature-grid,
-    .pricing-grid,
-    .activation-grid {
+    .pricing-grid {
         grid-template-columns: 1fr;
     }
     
@@ -955,10 +870,5 @@ body {
     .footer-content {
         flex-direction: column;
         text-align: center;
-    }
-    
-    .activation-features {
-        flex-direction: column;
-        align-items: center;
     }
 }

@@ -15,12 +15,12 @@
             <span class="brand-tool">TOOL</span><span class="brand-ed">+ED</span>
         </div>
         <div class="nav-links">
-            <a href="#features">Features</a>
-            <a href="#phases">7 Phases</a>
-            <a href="#pricing">Pricing</a>
-            <a href="/manual" class="nav-manual">Manual</a>
+            <a href="/" class="nav-active">Home</a>
+            <a href="demo.html">Demo</a>
+            <a href="manual.html">Manual</a>
+            <a href="index.html#pricing">Pricing</a>
         </div>
-        <a href="#pricing" class="btn btn-primary">Get IKKF</a>
+        <a href="get-started.html" class="btn btn-primary">Get IKKF</a>
     </nav>
 
     <!-- Hero Section -->
@@ -32,43 +32,20 @@
             </h1>
             <p class="hero-subtitle">The Way of Building</p>
             <div class="hero-acronym">
-                <span class="acronym-full">I</span> <span class="acronym-small">Know</span> <span class="acronym-full">K</span><span class="acronym-small">ung</span> <span class="acronym-full">F</span><span class="acronym-small">u</span>
+                <span class="acronym-full">I</span> <span class="acronym-know"><span class="know-k">K</span>now</span> <span class="acronym-full">K</span><span class="acronym-small">ung</span> <span class="acronym-full">F</span><span class="acronym-small">u</span>
             </div>
             <div class="hero-matrix-ref">"Show me" — Neo, The Matrix</div>
-            <p class="hero-tagline">A martial arts-inspired framework for agent task execution. Seven phases. Zero shortcuts. Mastery through repetition.</p>
+            <p class="hero-tagline">A framework for agent task execution. Seven phases. Zero shortcuts. Mastery through repetition.</p>
             <div class="hero-cta">
-                <a href="#pricing" class="btn btn-large btn-primary">Start Your Journey</a>
-                <a href="#terminal" class="btn btn-large btn-secondary">See It In Action</a>
+                <a href="get-started.html" class="btn btn-large btn-primary">Start Your Journey</a>
+                <a href="demo.html" class="btn btn-large btn-secondary">See It In Action</a>
             </div>
             <div class="hero-version">Current: v1.0.4</div>
         </div>
-        <div class="hero-seal">道</div>
+
     </section>
 
-    <!-- Terminal Demo -->
-    <section id="terminal" class="terminal-section">
-        <div class="section-header">
-            <h2>The Dojo</h2>
-            <p>Watch IKKF guide an agent through a complete task</p>
-        </div>
-        <div class="terminal">
-            <div class="terminal-header">
-                <div class="terminal-dots">
-                    <span></span><span></span><span></span>
-                </div>
-                <span class="terminal-title">ikkf session</span>
-            </div>
-            <div class="terminal-body" id="terminal-body">
-                <!-- Content will be animated by JS -->
-            </div>
-        </div>
-        <div class="terminal-controls">
-            <button id="replay-btn" class="btn btn-secondary">↻ Replay</button>
-        </div>
-    </section>
-
-
-
+    <!-- 7 Phases Section -->
     <section id="phases" class="phases">
         <div class="section-header light">
             <h2>The 7 Phases</h2>
@@ -146,12 +123,11 @@
                 <ul class="pricing-features">
                     <li>✓ Full IKKF framework</li>
                     <li>✓ All 7 phases</li>
-                    <li>✓ Task persistence</li>
-                    <li>✓ Memory integration</li>
+                    <li>✓ Task initialization</li>
+                    <li>✓ Config management</li>
                     <li>✓ CLI commands</li>
-                    <li>✓ Lifetime updates</li>
                 </ul>
-                <a href="#activation" class="btn btn-pricing">Get Solo</a>
+                <a href="get-started.html" class="btn btn-pricing">Get Solo</a>
             </div>
             <div class="pricing-card featured">
                 <div class="pricing-badge">Popular</div>
@@ -165,11 +141,9 @@
                 </div>
                 <ul class="pricing-features">
                     <li>✓ Everything in Solo</li>
-                    <li>✓ Up to 5 team members</li>
-                    <li>✓ Shared task templates</li>
-                    <li>✓ Team memory sync</li>
-                    <li>✓ Priority support</li>
-                    <li>✓ License management</li>
+                    <li>✓ Up to 5 activations</li>
+                    <li>✓ Priority email support</li>
+                    <li>✓ Early access releases</li>
                 </ul>
                 <a href="mailto:support@ikkf.info" class="btn btn-pricing btn-featured">Get Team</a>
             </div>
@@ -183,53 +157,11 @@
                 </div>
                 <ul class="pricing-features">
                     <li>✓ Everything in Team</li>
-                    <li>✓ Unlimited seats</li>
-                    <li>✓ Custom integrations</li>
-                    <li>✓ SLA & dedicated support</li>
-                    <li>✓ On-premise deployment</li>
-                    <li>✓ Training & onboarding</li>
+                    <li>✓ Unlimited activations</li>
+                    <li>✓ Volume pricing</li>
+                    <li>✓ Custom terms</li>
                 </ul>
                 <a href="mailto:support@ikkf.info" class="btn btn-pricing">Contact Us</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Activation Section -->
-    <section id="activation" class="activation">
-        <div class="section-header light">
-            <h2>Sovereign Mint</h2>
-            <p>Purchase once. Own forever. No phoning home.</p>
-        </div>
-        <div class="activation-grid">
-            <div class="activation-card">
-                <div class="activation-number">1</div>
-                <h3>Purchase</h3>
-                <p>One-time $29 payment. No subscription. No lock-in.</p>
-            </div>
-            <div class="activation-card">
-                <div class="activation-number">2</div>
-                <h3>Receive Key</h3>
-                <p>RSA-signed license key delivered to your email.</p>
-            </div>
-            <div class="activation-card">
-                <div class="activation-number">3</div>
-                <h3>Activate</h3>
-                <p>Local verification. No server required ever again.</p>
-                <code class="activation-code">$ ikkf activate IKKF-XXXX-XXXX-XXXX</code>
-            </div>
-        </div>
-        <div class="activation-features">
-            <div class="feature-item">
-                <span class="feature-icon">🔐</span>
-                <span>RSA-2048 Signed Keys</span>
-            </div>
-            <div class="feature-item">
-                <span class="feature-icon">📡</span>
-                <span>Offline Validation</span>
-            </div>
-            <div class="feature-item">
-                <span class="feature-icon">🚀</span>
-                <span>Turso + Node.js Backend</span>
             </div>
         </div>
     </section>
@@ -242,8 +174,6 @@
                 <p>The Way of Building</p>
             </div>
             <div class="footer-links">
-                <a href="/manual">Manual</a>
-                <a href="https://github.com/Tooled-app/ikkf">GitHub</a>
                 <a href="mailto:support@ikkf.info">Contact</a>
             </div>
         </div>

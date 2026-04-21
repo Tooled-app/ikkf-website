@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual — IKKF</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+JP:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .manual-page {
+            padding-top: 100px;
+            min-height: 100vh;
+            display: flex;
+        }
+        .manual-sidebar {
+            width: 280px;
+            padding: var(--space-xl);
+            border-right: 1px solid #333;
+            position: sticky;
+            top: 64px;
+            height: calc(100vh - 64px);
+            overflow-y: auto;
+        }
+        .manual-sidebar h2 {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--gray);
+            margin-bottom: var(--space-md);
+        }
+        .manual-nav {
+            list-style: none;
+            padding: 0;
+        }
+        .manual-nav li {
+            margin-bottom: var(--space-xs);
+        }
+        .manual-nav a {
+            color: rgba(245, 240, 232, 0.7);
+            text-decoration: none;
+            font-size: 0.9375rem;
+            display: block;
+            padding: 0.5rem 0;
+            transition: color var(--transition);
+        }
+        .manual-nav a:hover,
+        .manual-nav a.active {
+            color: var(--cream);
+        }
+        .manual-content {
+            flex: 1;
+            padding: var(--space-xl) var(--space-2xl);
+            max-width: 800px;
+        }
+        .manual-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: var(--space-lg);
+            font-family: var(--font-serif);
+        }
+        .manual-content h2 {
+            font-size: 1.75rem;
+            margin-top: var(--space-2xl);
+            margin-bottom: var(--space-md);
+            font-family: var(--font-serif);
+            padding-bottom: var(--space-sm);
+            border-bottom: 1px solid #333;
+        }
+        .manual-content h3 {
+            font-size: 1.25rem;
+            margin-top: var(--space-xl);
+            margin-bottom: var(--space-sm);
+            font-family: var(--font-serif);
+            color: var(--vermillion);
+        }
+        .manual-content p {
+            color: rgba(245, 240, 232, 0.8);
+            line-height: 1.8;
+            margin-bottom: var(--space-md);
+        }
+        .manual-content ul,
+        .manual-content ol {
+            margin-bottom: var(--space-md);
+            padding-left: var(--space-lg);
+        }
+        .manual-content li {
+            color: rgba(245, 240, 232, 0.8);
+            line-height: 1.8;
+            margin-bottom: var(--space-xs);
+        }
+        .manual-content code {
+            background: rgba(217, 74, 58, 0.1);
+            color: var(--vermillion);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: var(--font-mono);
+            font-size: 0.875rem;
+        }
+        .code-block {
+            background: #0d0d0d;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: var(--space-md);
+            font-family: var(--font-mono);
+            font-size: 0.875rem;
+            color: var(--cream);
+            overflow-x: auto;
+            margin: var(--space-md) 0 var(--space-lg);
+        }
+        .code-block .comment {
+            color: var(--gray);
+        }
+        .code-block .command {
+            color: #fff;
+        }
+        .phase-grid {
+            display: grid;
+            gap: var(--space-md);
+            margin: var(--space-lg) 0;
+        }
+        .phase-card {
+            background: rgba(26, 26, 26, 0.6);
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: var(--space-md);
+        }
+        .phase-card h4 {
+            color: var(--vermillion);
+            font-size: 1rem;
+            margin-bottom: var(--space-xs);
+            font-family: var(--font-serif);
+        }
+        .phase-card p {
+            color: var(--gray);
+            font-size: 0.9375rem;
+            margin-bottom: 0;
+        }
+        .nav-active {
+            color: var(--cream) !important;
+        }
+        @media (max-width: 768px) {
+            .manual-sidebar {
+                display: none;
+            }
+            .manual-content {
+                padding: var(--space-xl);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-brand">
+            <a href="index.html" style="text-decoration: none;"><span class="brand-tool">TOOL</span><span class="brand-ed">+ED</span></a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="demo.html">Demo</a>
+            <a href="manual.html" class="nav-active">Manual</a>
+            <a href="index.html#pricing">Pricing</a>
+        </div>
+        <a href="get-started.html" class="btn btn-primary">Get IKKF</a>
+    </nav>
+
+    <!-- Manual Page Content -->
+    <div class="manual-page">
+        <aside class="manual-sidebar">
+            <h2>Contents</h2>
+            <ul class="manual-nav">
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#installation">Installation</a></li>
+                <li><a href="#commands">Commands</a></li>
+                <li><a href="#phases">The 7 Phases</a></li>
+                <li><a href="#configuration">Configuration</a></li>
+                <li><a href="#examples">Examples</a></li>
+                <li><a href="#troubleshooting">Troubleshooting</a></li>
+            </ul>
+        </aside>
+
+        <main class="manual-content">
+            <h1>IKKF Manual</h1>
+            
+            <section id="overview">
+                <h2>Overview</h2>
+                <p>IKKF (I Know Kung Fu) is a runtime skill synthesis protocol for AI agents. It provides a structured approach to task execution through seven explicit phases.</p>
+                
+                <p>Unlike other frameworks that hide their reasoning, IKKF makes every step visible and verifiable. Each phase produces concrete output that can be reviewed, audited, and improved.</p>
+                
+                <h3>Key Principles</h3>
+                <ul>
+                    <li><strong>Explicit over implicit:</strong> Every step is stated, not assumed</li>
+                    <li><strong>Verifiable output:</strong> Each phase produces visible results</li>
+                    <li><strong>Memory-backed:</strong> Decisions and research are recorded</li>
+                    <li><strong>Chunked work:</strong> Tasks broken into 10-15 minute pieces</li>
+                </ul>
+            </section>
+
+            <section id="installation">
+                <h2>Installation</h2>
+                
+                <h3>macOS & Linux</h3>
+                <div class="code-block">
+<span class="command">curl -fsSL https://ikkf.info/install.sh | sh</span>
+                </div>
+                
+                <h3>Windows</h3>
+                <div class="code-block">
+<span class="command">irm https://ikkf.info/install.ps1 | iex</span>
+                </div>
+                
+                <h3>Verify Installation</h3>
+                <div class="code-block">
+<span class="command">ikkf version</span><br>
+IKKF CLI v3.0.0
+                </div>
+            </section>
+
+            <section id="commands">
+                <h2>Commands</h2>
+                
+                <h3>ikkf init</h3>
+                <p>Initialize IKKF configuration. Creates the config file and task directory.</p>
+                <div class="code-block">
+<span class="command">ikkf init [--force]</span><br><br>
+<span class="comment"># Options:</span><br>
+<span class="comment">#   --force, -f  Overwrite existing config</span>
+                </div>
+                
+                <h3>ikkf start</h3>
+                <p>Start a new task with IKKF protocol. Launches the 7-phase process.</p>
+                <div class="code-block">
+<span class="command">ikkf start "Task description" [--confidence 50] [--yes]</span><br><br>
+<span class="comment"># Options:</span><br>
+<span class="comment">#   --confidence, -c  Set confidence threshold (default: 50)</span><br>
+<span class="comment">#   --yes, -y         Skip confirmation prompts</span>
+                </div>
+                
+                <h3>ikkf status</h3>
+                <p>Check the status of the current task.</p>
+                <div class="code-block">
+<span class="command">ikkf status</span>
+                </div>
+                
+                <h3>ikkf version</h3>
+                <p>Display the current IKKF version.</p>
+                <div class="code-block">
+<span class="command">ikkf version</span>
+                </div>
+            </section>
+
+            <section id="phases">
+                <h2>The 7 Phases</h2>
+                <p>Every IKKF task follows these seven phases in order. No skipping. No shortcuts.</p>
+                
+                <div class="phase-grid">
+                    <div class="phase-card">
+                        <h4>1. Acknowledge</h4>
+                        <p>Confirm task understanding. State it back. Remove ambiguity.</p>
+                    </div>
+                    
+                    <div class="phase-card">
+                        <h4>2. Domain Detection</h4>
+                        <p>Identify the domain. Map required expertise. Load relevant skills.</p>
+                    </div>
+                    
+                    <div class="phase-card">
+                        <h4>3. Check Existing</h4>
+                        <p>Search memory. Find prior art. Check for existing solutions.</p>
+                    </div>
+                    
+                    <div class="phase-card">
+                        <h4>4. Research</h4>
+                        <p>Deep dive into best practices. 2026 standards. Trade-offs.</p>
+                    </div>
+                    
+                    <div class="phase-card">
+                        <h4>5. Decomposition</h4>
+                        <p>Break into 10-15 minute chunks. Clear deliverables. Map dependencies.</p>
+                    </div>
+                    
+                    <div class="phase-card">
+                        <h4>6. Synthesize</h4>
+                        <p>Plan implementation from research. Architecture decisions. Build order.</p>
+                    </div>
+                    
+                    <div class="phase-card">
+                        <h4>7. Execute & Persist</h4>
+                        <p>Build each chunk. Test. Commit. Record to memory. Deliver.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="configuration">
+                <h2>Configuration</h2>
+                
+                <p>IKKF stores its configuration in <code>~/.config/ikkf/config.yaml</code>.</p>
+                
+                <div class="code-block">
+<span class="comment"># IKKF Configuration</span><br>
+version: "3.0.0"<br>
+confidence_threshold: 50<br>
+chunk_size_minutes: 15<br>
+research_depth: normal<br>
+tasks_dir: ~/.config/ikkf/tasks<br>
+skills_dir: ~/.openclaw/workspace/skills/generated
+                </div>
+                
+                <h3>Configuration Options</h3>
+                <ul>
+                    <li><code>confidence_threshold</code> — When to trigger deep research (default: 50)</li>
+                    <li><code>chunk_size_minutes</code> — Target duration for task chunks (default: 15)</li>
+                    <li><code>research_depth</code> — quick, normal, or thorough</li>
+                    <li><code>tasks_dir</code> — Where task files are stored</li>
+                    <li><code>skills_dir</code> — Where generated skills are saved</li>
+                </ul>
+            </section>
+
+            <section id="examples">
+                <h2>Examples</h2>
+                
+                <h3>Example 1: Building a Feature</h3>
+                <div class="code-block">
+<span class="command">$ ikkf start "Add user authentication with JWT"</span><br>
+<br>
+<span class="comment"># IKKF will guide you through:</span><br>
+<span class="comment"># 1. Acknowledge: Confirm JWT auth requirements</span><br>
+<span class="comment"># 2. Domain Detection: Backend/API development</span><br>
+<span class="comment"># 3. Check Existing: Look for auth patterns in codebase</span><br>
+<span class="comment"># 4. Research: JWT best practices, libraries</span><br>
+<span class="comment"># 5. Decomposition: Break into chunks (setup, routes, middleware, tests)</span><br>
+<span class="comment"># 6. Synthesize: Plan implementation order</span><br>
+<span class="comment"># 7. Execute: Build, test, commit, document</span>
+                </div>
+                
+                <h3>Example 2: Research Task</h3>
+                <div class="code-block">
+<span class="command">$ ikkf start "Research vector databases for RAG implementation"</span>
+                </div>
+                
+                <h3>Example 3: Debugging</h3>
+                <div class="code-block">
+<span class="command">$ ikkf start "Fix memory leak in background worker"</span>
+                </div>
+            </section>
+
+            <section id="troubleshooting">
+                <h2>Troubleshooting</h2>
+                
+                <h3>Command not found</h3>
+                <p>Ensure the IKKF binary is in your PATH. The install script adds this automatically, but you may need to restart your shell.</p>
+                
+                <div class="code-block">
+<span class="command">export PATH="$HOME/.local/bin:$PATH"</span>
+                </div>
+                
+                <h3>Config not initializing</h3>
+                <p>Check that your home directory is writable and that the config directory doesn't already exist (unless using --force).</p>
+                
+                <h3>Task not starting</h3>
+                <p>Ensure you've run <code>ikkf init</code> first. IKKF needs a configuration before it can track tasks.</p>
+            </section>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="brand-tool">TOOL</span><span class="brand-ed">+ED</span>
+                <p>The Way of Building</p>
+            </div>
+            <div class="footer-links">
+                <a href="manual.html">Manual</a>
+                <a href="mailto:support@ikkf.info">Contact</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 TOOL+ED. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for sidebar links
+        document.querySelectorAll('.manual-nav a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.querySelector(link.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Highlight active section on scroll
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.manual-nav a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

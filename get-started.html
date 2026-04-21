@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Started — IKKF</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+JP:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .get-started-page {
+            padding-top: 100px;
+            min-height: 100vh;
+        }
+        .get-started-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto var(--space-2xl);
+            padding: 0 var(--space-xl);
+        }
+        .get-started-header h1 {
+            font-size: 3rem;
+            margin-bottom: var(--space-md);
+            font-family: var(--font-serif);
+        }
+        .get-started-header p {
+            color: var(--gray);
+            font-size: 1.125rem;
+            line-height: 1.8;
+        }
+        .install-section {
+            max-width: 800px;
+            margin: 0 auto var(--space-3xl);
+            padding: 0 var(--space-xl);
+        }
+        .install-card {
+            background: rgba(26, 26, 26, 0.6);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: var(--space-xl);
+            margin-bottom: var(--space-lg);
+        }
+        .install-card h2 {
+            color: var(--cream);
+            font-size: 1.25rem;
+            margin-bottom: var(--space-md);
+            font-family: var(--font-serif);
+        }
+        .install-card p {
+            color: var(--gray);
+            margin-bottom: var(--space-md);
+            line-height: 1.6;
+        }
+        .code-block {
+            background: #0d0d0d;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: var(--space-md);
+            font-family: var(--font-mono);
+            font-size: 0.875rem;
+            color: var(--cream);
+            overflow-x: auto;
+            margin-bottom: var(--space-md);
+        }
+        .code-block .comment {
+            color: var(--gray);
+        }
+        .code-block .command {
+            color: #fff;
+        }
+        .platform-tabs {
+            display: flex;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-md);
+            border-bottom: 1px solid #333;
+        }
+        .platform-tab {
+            padding: var(--space-sm) var(--space-md);
+            background: transparent;
+            border: none;
+            color: var(--gray);
+            cursor: pointer;
+            font-size: 0.875rem;
+            transition: color var(--transition);
+        }
+        .platform-tab:hover,
+        .platform-tab.active {
+            color: var(--cream);
+        }
+        .platform-tab.active {
+            border-bottom: 2px solid var(--vermillion);
+        }
+        .platform-content {
+            display: none;
+        }
+        .platform-content.active {
+            display: block;
+        }
+        .quickstart-steps {
+            max-width: 800px;
+            margin: 0 auto var(--space-3xl);
+            padding: 0 var(--space-xl);
+        }
+        .quickstart-step {
+            display: flex;
+            gap: var(--space-lg);
+            padding: var(--space-lg) 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .quickstart-step:last-child {
+            border-bottom: none;
+        }
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: var(--vermillion);
+            color: var(--white);
+            font-size: 1rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .step-content h3 {
+            color: var(--cream);
+            font-size: 1.125rem;
+            margin-bottom: var(--space-xs);
+            font-family: var(--font-serif);
+        }
+        .step-content p {
+            color: var(--gray);
+            font-size: 0.9375rem;
+            line-height: 1.6;
+            margin-bottom: var(--space-sm);
+        }
+        .pricing-compare {
+            max-width: 1000px;
+            margin: 0 auto var(--space-3xl);
+            padding: 0 var(--space-xl);
+        }
+        .pricing-compare h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: var(--space-xl);
+            font-family: var(--font-serif);
+        }
+        .nav-active {
+            color: var(--cream) !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-brand">
+            <a href="index.html" style="text-decoration: none;"><span class="brand-tool">TOOL</span><span class="brand-ed">+ED</span></a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="demo.html">Demo</a>
+            <a href="manual.html">Manual</a>
+            <a href="index.html#pricing">Pricing</a>
+        </div>
+        <a href="get-started.html" class="btn btn-primary">Get IKKF</a>
+    </nav>
+
+    <!-- Get Started Page Content -->
+    <main class="get-started-page">
+        <div class="get-started-header">
+            <h1>Get Started with IKKF</h1>
+            <p>Install IKKF in seconds. No dependencies. No complex setup. Just a single binary that works everywhere.</p>
+        </div>
+
+        <!-- Install Section -->
+        <section class="install-section">
+            <div class="install-card">
+                <h2>Install IKKF</h2>
+                <p>Choose your platform and run the install command:</p>
+                
+                <div class="platform-tabs">
+                    <button class="platform-tab active" data-platform="macos">macOS</button>
+                    <button class="platform-tab" data-platform="linux">Linux</button>
+                    <button class="platform-tab" data-platform="windows">Windows</button>
+                </div>
+                
+                <div class="platform-content active" id="macos">
+                    <div class="code-block">
+                        <span class="comment"># Install via curl</span><br>
+                        <span class="command">curl -fsSL https://ikkf.info/install.sh | sh</span>
+                    </div>
+                    <p>Or download will be available soon.</p>
+                </div>
+                
+                <div class="platform-content" id="linux">
+                    <div class="code-block">
+                        <span class="comment"># Install via curl</span><br>
+                        <span class="command">curl -fsSL https://ikkf.info/install.sh | sh</span>
+                    </div>
+                    <p>Or use your package manager:</p>
+                    <div class="code-block">
+                        <span class="comment"># Ubuntu/Debian</span><br>
+                        <span class="command">apt install ikkf</span><br><br>
+                        <span class="comment"># Fedora</span><br>
+                        <span class="command">dnf install ikkf</span>
+                    </div>
+                </div>
+                
+                <div class="platform-content" id="windows">
+                    <div class="code-block">
+                        <span class="comment"># Windows version coming soon</span><br>
+                        <span class="command"># Currently in testing phase</span>
+                    </div>
+                    <p>Windows support is <strong>coming soon</strong>. Join the waitlist to be notified when it's ready.</p>
+                    <a href="mailto:support@ikkf.info?subject=Windows Waitlist" class="btn btn-secondary">Notify Me</a>
+                </div>
+            </div>
+
+            <div class="install-card">
+                <h2>Verify Installation</h2>
+                <div class="code-block">
+                    <span class="command">$ ikkf version</span><br>
+                    IKKF CLI v3.0.0
+                </div>
+            </div>
+        </section>
+
+        <!-- Quickstart Steps -->
+        <section class="quickstart-steps">
+            <div class="quickstart-step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Initialize IKKF</h3>
+                    <p>Create your configuration file and set up the task directory.</p>
+                    <div class="code-block">
+                        <span class="command">$ ikkf init</span><br>
+                        <span class="comment"># Creates ~/.config/ikkf/config.yaml</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="quickstart-step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Start Your First Task</h3>
+                    <p>Begin with a simple task to see IKKF in action.</p>
+                    <div class="code-block">
+                        <span class="command">$ ikkf start "Build a landing page"</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="quickstart-step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Follow the Phases</h3>
+                    <p>IKKF will guide you through each of the 7 phases. Answer the prompts and watch your task progress.</p>
+                    <div class="code-block">
+                        <span class="command">$ ikkf status</span><br>
+                        <span class="comment"># Check current task progress</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Comparison -->
+        <section class="pricing-compare">
+            <h2>Choose Your License</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Solo</h3>
+                        <div class="pricing-price">
+                            <span class="price-currency">$</span>
+                            <span class="price-amount">29</span>
+                        </div>
+                        <p class="pricing-note">One-time purchase</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>✓ Full IKKF framework</li>
+                        <li>✓ All 7 phases</li>
+                        <li>✓ Task initialization</li>
+                        <li>✓ Config management</li>
+                        <li>✓ CLI commands</li>
+                    </ul>
+                    <a href="mailto:support@ikkf.info?subject=Solo License Purchase" class="btn btn-pricing">Buy Solo — $29</a>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">Popular</div>
+                    <div class="pricing-header">
+                        <h3>Team</h3>
+                        <div class="pricing-price">
+                            <span class="price-currency">$</span>
+                            <span class="price-amount">99</span>
+                        </div>
+                        <p class="pricing-note">Up to 5 seats</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>✓ Everything in Solo</li>
+                        <li>✓ Up to 5 activations</li>
+                        <li>✓ Priority email support</li>
+                        <li>✓ Early access releases</li>
+                    </ul>
+                    <a href="mailto:support@ikkf.info?subject=Team License Inquiry" class="btn btn-pricing btn-featured">Buy Team — $99</a>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Enterprise</h3>
+                        <div class="pricing-price">
+                            <span class="price-custom">Custom</span>
+                        </div>
+                        <p class="pricing-note">Unlimited seats</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>✓ Everything in Team</li>
+                        <li>✓ Unlimited activations</li>
+                        <li>✓ Volume pricing</li>
+                        <li>✓ Custom terms</li>
+                    </ul>
+                    <a href="mailto:support@ikkf.info?subject=Enterprise Inquiry" class="btn btn-pricing">Contact Sales</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="brand-tool">TOOL</span><span class="brand-ed">+ED</span>
+                <p>The Way of Building</p>
+            </div>
+            <div class="footer-links">
+                <a href="manual.html">Manual</a>
+                <a href="mailto:support@ikkf.info">Contact</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 TOOL+ED. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Platform tab switching
+        document.querySelectorAll('.platform-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                const platform = tab.dataset.platform;
+                
+                // Update active tab
+                document.querySelectorAll('.platform-tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                
+                // Show corresponding content
+                document.querySelectorAll('.platform-content').forEach(c => c.classList.remove('active'));
+                document.getElementById(platform).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

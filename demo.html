@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo — IKKF</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+JP:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .demo-page {
+            padding-top: 100px;
+            min-height: 100vh;
+        }
+        .demo-intro {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto var(--space-2xl);
+        }
+        .demo-intro h1 {
+            font-size: 3rem;
+            margin-bottom: var(--space-md);
+            font-family: var(--font-serif);
+        }
+        .demo-intro p {
+            color: var(--gray);
+            font-size: 1.125rem;
+            line-height: 1.8;
+        }
+        .demo-terminal-wrapper {
+            max-width: 900px;
+            margin: 0 auto var(--space-3xl);
+        }
+        .demo-terminal-wrapper .terminal {
+            min-height: 500px;
+        }
+        .demo-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-lg);
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 var(--space-xl);
+        }
+        .demo-feature {
+            background: rgba(26, 26, 26, 0.6);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: var(--space-xl);
+            text-align: center;
+        }
+        .demo-feature h3 {
+            color: var(--cream);
+            font-size: 1.125rem;
+            margin-bottom: var(--space-sm);
+            font-family: var(--font-serif);
+        }
+        .demo-feature p {
+            color: var(--gray);
+            font-size: 0.9375rem;
+            line-height: 1.6;
+        }
+        .demo-cta {
+            text-align: center;
+            padding: var(--space-3xl) var(--space-xl);
+        }
+        .nav-active {
+            color: var(--cream) !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-brand">
+            <a href="index.html" style="text-decoration: none;"><span class="brand-tool">TOOL</span><span class="brand-ed">+ED</span></a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="demo.html" class="nav-active">Demo</a>
+            <a href="manual.html">Manual</a>
+            <a href="index.html#pricing">Pricing</a>
+        </div>
+        <a href="get-started.html" class="btn btn-primary">Get IKKF</a>
+    </nav>
+
+    <!-- Demo Page Content -->
+    <main class="demo-page">
+        <div class="demo-intro">
+            <h1>See IKKF In Action</h1>
+            <p>Watch how IKKF guides an agent through building an authentication system. Each phase is explicit, tracked, and documented. No shortcuts. No black boxes.</p>
+        </div>
+
+        <div class="demo-terminal-wrapper">
+            <div class="terminal">
+                <div class="terminal-header">
+                    <div class="terminal-dots">
+                        <span></span><span></span><span></span>
+                    </div>
+                    <span class="terminal-title">ikkf session — authentication system</span>
+                </div>
+                <div class="terminal-body" id="terminal-body">
+                    <!-- Content animated by JS -->
+                </div>
+            </div>
+            <div class="terminal-controls">
+                <button id="replay-btn" class="btn btn-secondary">↻ Replay Animation</button>
+            </div>
+        </div>
+
+        <div class="demo-features">
+            <div class="demo-feature">
+                <h3>Explicit Phases</h3>
+                <p>Every task follows the same 7 phases. No skipping. No hidden steps.</p>
+            </div>
+            <div class="demo-feature">
+                <h3>Clear Output</h3>
+                <p>Each phase produces visible, verifiable output. You always know what's happening.</p>
+            </div>
+            <div class="demo-feature">
+                <h3>Built-in Memory</h3>
+                <p>IKKF automatically records decisions, research, and outcomes for future reference.</p>
+            </div>
+        </div>
+
+        <div class="demo-cta">
+            <a href="get-started.html" class="btn btn-large btn-primary">Start Using IKKF</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="brand-tool">TOOL</span><span class="brand-ed">+ED</span>
+                <p>The Way of Building</p>
+            </div>
+            <div class="footer-links">
+                <a href="manual.html">Manual</a>
+                <a href="mailto:support@ikkf.info">Contact</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 TOOL+ED. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
