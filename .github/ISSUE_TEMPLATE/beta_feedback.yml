@@ -1,0 +1,58 @@
+name: IKKF Beta Feedback
+description: Share your experience using IKKF — what worked, what didn't, and what to improve.
+title: "[Beta] "
+labels: [beta, feedback]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping make IKKF better! This takes ~2 minutes. Your feedback goes straight into the next version.
+  - type: dropdown
+    id: install
+    attributes:
+      label: Did IKKF install and run successfully?
+      options:
+        - "Yes, worked first time"
+        - "Yes, but with a hiccup"
+        - "No, it failed"
+    validations:
+      required: true
+  - type: input
+    id: use
+    attributes:
+      label: What did you use IKKF for?
+      description: One line — e.g. "broke down a complex task", "planned a project", "research"
+    validations:
+      required: true
+  - type: textarea
+    id: worked
+    attributes:
+      label: What worked well?
+      description: One or two lines
+  - type: textarea
+    id: frustrating
+    attributes:
+      label: What was frustrating or confusing?
+      description: One or two lines
+  - type: input
+    id: change
+    attributes:
+      label: What's the one thing you'd change first?
+      description: One line
+    validations:
+      required: true
+  - type: textarea
+    id: system
+    attributes:
+      label: System details (only if something broke)
+      description: |
+        - OS (e.g. macOS 14, Windows 11)
+        - Python version (`python3 --version`)
+        - IKKF version (`ikkf --version`)
+        - Error message or screenshot
+      render: markdown
+  - type: input
+    id: contact
+    attributes:
+      label: Contact (optional)
+      description: Email or handle, only if you're happy to be contacted for follow-up
